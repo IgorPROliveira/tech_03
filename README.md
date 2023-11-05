@@ -21,7 +21,7 @@
 
 <h2><strong>Funcionalidades e Demonstração da Aplicação - 2º Item do Entregável</strong></h2>
 <p></p>
-<p> 1) Baixar via GIT : git clone https://github.com/ArleiPacanaro/Parquimetro.git</p> 
+<p> 1) Baixar via GIT : git clone https://github.com/IgorPROliveira/tech_03.git</p> 
 <p></p>
 <p> 2) Executar em máquina local : na linha de comando ir até a pasta que clonou o projeto e no prompt da linha de comando, executar: 
 <p><b> 2.1)ir até a pasta: TechChallenge e  executar o comando: docker compose up -d </b> </p> 
