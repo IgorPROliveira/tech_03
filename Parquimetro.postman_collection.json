@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "6a3f31ab-4ff7-443f-a99c-17d9fa2a0b49",
+		"name": "Parquimetro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27915124"
+	},
+	"item": [
+		{
+			"name": "Cadastrar condutor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf\": 33129064079,\r\n    \"nome\": \"Arlei\",\r\n    \"email\": \"Arlei.lepiani@homail.com\",\r\n    \"formaPagamento\": \"PIX\",\r\n    \"pais\": \"Brasil\",\r\n    \"estado\": \"SP\",\r\n    \"cidade\": \"Catanduva\",\r\n    \"cep\": \"01307-000\",\r\n    \"logradouro\": \"Rua da Batatas\",\r\n    \"numero\": 100,\r\n    \"complemento\": \"AP 10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/condutor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"condutor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIstar todos os condutores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/condutor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"condutor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter condutor por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/condutor/33129064079",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"condutor",
+						"33129064079"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar condutor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf\": 33129064079,\r\n    \"nome\": \"Arlei\",\r\n    \"email\": \"Arlei.lepiani@homail.com\",\r\n    \"formaPagamento\": \"CARTAO_DEBITO\",\r\n    \"pais\": \"Brasil\",\r\n    \"estado\": \"SP\",\r\n    \"cidade\": \"Catanduva\",\r\n    \"cep\": \"01307-000\",\r\n    \"logradouro\": \"Rua da Batatas\",\r\n    \"numero\": 100,\r\n    \"complemento\": \"AP 10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/condutor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"condutor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar veiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"placa\": \"DNA5D67\",\r\n    \"modelo\": \"VW GOL\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/veiculo?cpf=33129064079",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veiculo"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "33129064079"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar veiculos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/veiculo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veiculo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter veiculo por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/veiculo/DNA5D67",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veiculo",
+						"DNA5D67"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Iniciar estacionamento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"entrada\": \"2023-11-05T20:18:38\",\r\n    \"saida\": \"2023-11-05T20:20:00\",\r\n    \"periodoEstacionamento\": \"PERIODO_FIXO\",\r\n    \"condutorCPF\": 33129064079,\r\n    \"veiculoPlaca\": \"DNA5D67\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/estacionamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacionamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Encerrar estacionamento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"6547f959e21ad44a36b9f61b\",\r\n    \"saida\": \"2023-11-05T20:20:00\",\r\n    \"formaPagamento\": \"PIX\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/estacionamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacionamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os estacionamentos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/estacionamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacionamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter estacionamento por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/estacionamento/6547f959e21ad44a36b9f61b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacionamento",
+						"6547f959e21ad44a36b9f61b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gerar recibo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/estacionamento/recibo/6547f959e21ad44a36b9f61b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estacionamento",
+						"recibo",
+						"6547f959e21ad44a36b9f61b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
