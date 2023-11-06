@@ -199,10 +199,7 @@
 			<p><version>3.0.0</version></p>
 		<p></dependency></p>
 
-                 <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+                
 
 	</dependencies>
 
@@ -291,13 +288,13 @@
 <p>Anotação @AllArgsConstructor: Iremos falar sobre o Lombok que é a blblioteca que nos fornece esta anotação, em um capítulo mais abaixo, mas a priori esta anotação implementa um construtor com todos os atributos da classe, podemos usar esta anotação no nível da classe.</p>
 <p>Anotação @EqualsAndHashCode: Iremos falar sobre o Lombok que é a biblioteca que nos fornece esta anotação, em um capítulo mais abaixo, mas a priori esta anotação implementa os métodos equals e hashcode sobrescritos de Object (podemos definir quais atributos devem ou não ser utilizados, através de parâmetros), podemos usar esta anotação no nível da classe</p>
 <p></p>
-<p>Nesta 3º Fase com as necessidades de termos um CRUD completo e em especial a persistência a camada de dados, acrescentamos mais algumas anotações e classes, explicados logo abaixo de forma sucinta, pois temos um novo tópico mais especifico sobre JPA\Hibernate:</p>
+<p>Nesta 3º Fase com as necessidades de termos um CRUD completo e em especial a persistência a camada de dados, acrescentamos mais algumas anotações e classes, explicados logo abaixo de forma sucinta, pois temos um novo tópico mais especifico sobre MongoDB e Spring Data</p>
 <p></p>
 <p>@Document: anotação a nível de classe, utilizamos para declarar que a classe é uma documento no banco MongoDB ou NOSQL A partir disso o Spring Data estabelecerá a ligação entre a entidade e uma tabela de mesmo nome no banco de dados, onde os dados de objetos desse tipo poderão ser persistidos</p>
 <p>@Ref: anotação a nível de atributo, para podermos incorporar outro documento\tabela.
 <p>@ID : anotação a nível de atributo, definrrmos as chaves de nosso documento.</p> 
 <p>@Version : anotação a nível de atributo, porém é um atributo na classe que garante que nosso dado não será atualizado por outro requisição\sistema, pois o baco NoSQL não tem as regras de ACID como os padrão SQL e temos que garantir via aplicação.</p> 
-<p>@Index : anotação a nível de atributo, para indicar que o campo possui um indice mas devemos criar fisicamente no banco de dados também para ter efeito.</p> 
+<p>@Indexed : anotação a nível de atributo, para indicar que o campo possui um indice mas devemos criar fisicamente no banco de dados também para ter efeito.</p> 
 
 
 <p></p>
@@ -373,10 +370,20 @@ está somente no futuro ou no futuro ou no presente.</p>
 
 <h3><strong>MongoDB</strong></h3>
 <p></p>
-
-
-
+<p>O MongoDB é um sistema  de banco de dados NoSQL (Não Relacional), utiliza um modelo de documentos, onde os dados são armazenados em documentos no formato JSON(JavaScript Object Notation) ou BSON (Binary JSON). </p>
 <p></p>
+<p></p>A vantagem do MongoDB é o fato  de fornecer alta disponibilidade e tolerância a falhas. Ele suporta replicação automática, garantindo que, se um servidor falhar, osoutros continuarão funcionando normalmente. Além disso, o MongoDB possui recursos de particionamento, permitindo que os dados sejam distribuídos em vários nós de um cluster para melhor desempenho e escalabilidade</p>
+
+<p>Como o parquimetro pode ter um aumento exponecial nos periodos de férias, é importante termos esta capaciadade para irmos aumentando a escalabilidade</p>
+<p>Optamos também em usar um modelo de desnromalizado que facilita e agiliza nossas pesquisas e é o mais indicado para bancos NoSQL, sequindo os modelos de Incorporação e duplicação seletiva de dados, mas cotrolando bem as transações já que dferente do SQL o NOSQL não possui ACID (Atomicidade, Consistência, Isolamento e Durabilidade), tendo que contralar em nosso caso na aplicação, para issso podemos usar recuros de lógica d eprogração e mesmo algumas anotações como @Version.</p>
+<p></p>
+<h3><strong>Spring Data</strong></h3>
+<p></p>
+<p>O Spring Data pertence a Spring Framework com o objetivo de  facilitar o acesso e a manipulação de dados em aplicações Java. Ele fornece uma camada de abstração sobre diferentes tecnologias de persistência de dados, como bancos de dados relacionais, bancos de dados NoSQL, serviços web RESTful e até mesmo sistemas de arquivos.</p>
+<p>Usamos em nosso projeto o Spring Data MongoDB para interação com o banco de dados NoSQL MongoDB.</p>
+<p>O uso do Spring Data com o MongoDB é vantajoso pois simplifica a integração entre o MongoDB e aplicações Java, reduzindo código boilerplate e abstraindo detalhes da conexão.</p>
+
+<p></p> 
 <h3><strong>Docker</strong></h3>
 <p></p>
 <p>Com o desenvolvimento do projeto e a necessidade de distribuição do projeto para que demais pessoas possam executa-lo, vimos a necessidade de criar um Docker para facilitar este ponto sem que quem desejar utiliza-lo tenha todas as instalações necessárias.</p>
