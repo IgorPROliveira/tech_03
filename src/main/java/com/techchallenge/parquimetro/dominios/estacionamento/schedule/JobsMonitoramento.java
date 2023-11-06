@@ -20,7 +20,8 @@ public class JobsMonitoramento {
     public JobsMonitoramento(EstacionamentoRepository estacionamentoRepository) {
         this.estacionamentoRepository = estacionamentoRepository;
     }
-    // chamar as querys  via repository ou algo no service , fazer um loop e mandar mensagens
+    // Criado rotina de envio de notificação caso for subir em uma cloud como a aws por exemplo
+    //É possível utilizar os serviços de SQS e SNS para fazer o serviço de mensageria.
 
     @Scheduled(cron = "0 0/5 * * * ?")
     public void mensagemExpiracao() {

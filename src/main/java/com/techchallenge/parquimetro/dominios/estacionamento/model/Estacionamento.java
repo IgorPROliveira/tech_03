@@ -6,6 +6,7 @@ import com.techchallenge.parquimetro.dominios.veiculo.model.Veiculo;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -23,7 +24,10 @@ public class Estacionamento {
     private LocalDateTime dtEntrada;
     private LocalDateTime dtSaida;
     private PeriodoEstacionamento periodoEstacionamento;
+    //Foi criado os idx no banco
+    @Indexed
     private FormaPagamento formaPagamento;
+    @Indexed
     private BigDecimal valor;
     @DBRef
     private Veiculo veiculo;
