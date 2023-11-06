@@ -361,12 +361,6 @@ somente no passado ou no passado e no presente.</p>
 <p>@Future e @FutureOrPresent: valida se o valor do campo de tipo de data
 está somente no futuro ou no futuro ou no presente.</p>
 <p></p>
-<h3><strong>Spring Data</strong></h3>
-<p></p>
-<p>O nosso projeto nesta fase apresentou a necessidade de persistirmos os dados em um banco de dados confiável NOSQL, com isto fomos pesquisar através dos requisitos:</p>
-<p>* Armazenamento de Objeto
-<p>* Possibilidade de aumento de escalabilidade de forma horizontal</p>
-<p>* Open Source</p>
 
 <h3><strong>MongoDB</strong></h3>
 <p></p>
