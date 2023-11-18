@@ -1,4 +1,4 @@
-package com.techchallenge.parquimetro.controllerException;
+package com.techchallenge.parquimetro.dominios.controllerException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

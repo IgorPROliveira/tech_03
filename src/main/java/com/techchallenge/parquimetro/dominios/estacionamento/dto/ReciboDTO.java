@@ -1,5 +1,6 @@
 package com.techchallenge.parquimetro.dominios.estacionamento.dto;
 
+
 import lombok.Getter;
 import lombok.Setter;
 

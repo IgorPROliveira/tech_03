@@ -1,4 +1,4 @@
-package com.techchallenge.parquimetro.config;
+package com.techchallenge.parquimetro.dominios.config;
 
 import com.mongodb.client.MongoClient;
 import org.springframework.beans.factory.annotation.Autowired;

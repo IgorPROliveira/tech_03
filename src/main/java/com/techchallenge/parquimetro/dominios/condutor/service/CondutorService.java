@@ -12,7 +12,6 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 
 
@@ -33,11 +32,13 @@ public class CondutorService {
     }
 
 
+
     public ResponseEntity<?> cadastrarCondutor(CondutorDTO condutorDTO) {
 
         Condutor condutorexistente = this.condutorRepository
                 .findById(condutorDTO.getCpf())
                 .orElse(null);
+
 
         if (condutorexistente == null) {
             Condutor condutor = condutorDTO.toEntity();
@@ -48,7 +49,12 @@ public class CondutorService {
             return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body("Condutor já exitente, usar metodo de atualização");
         }
+
+
+
+
     }
+
 
 
 
