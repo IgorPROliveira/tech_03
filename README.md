@@ -24,12 +24,14 @@
 <p> 1) Baixar via GIT : git clone https://github.com/IgorPROliveira/tech_03.git</p> 
 <p></p>
 <p> 2) Executar em máquina local : na linha de comando ir até a pasta que clonou o projeto e no prompt da linha de comando, executar: 
-<p><b> 2.1)ir até a pasta: TechChallenge e  executar o comando: docker compose up -d </b> </p> 
+<p><b> 2.1)ir até a pasta: TechChallenge e  executar o comando: docker build -t tech:3.0 . </b> </p> 
+<p><b> 2.2)ir até a pasta: TechChallenge e  executar o comando: docker compose up -d </b> </p> 
 <p> Poderiamos através de uma conta docker hub ja deixar a imagem pronta, porém por não ser requisito e ainda não termos esta conta cadastrada, iremos criar uma imagem localmente. Mas este passo já começa a nos preparar para implantarmos nosso projeto em algum serviço de Cloud e até mesmo usar recursos cloud native como: API Gateway. Load balancer, serviçois Serverless e todas as demais vantagens de um sistema em Nuvem.</p>
-<p><b>Premissa: Docker instalado na máquina client.</b></p> 
+<p><b>Premissa: Docker instalado na máquina client e AWS CLI</b></p> 
 <p></p>
 <p>Em nossa aplicação temos todas as Collections na pasta raiz para poderem realizar os testes.</p>
-
+<p></p>
+<p>Para acessar o swagger basta ir no browser no endereço: http://localhost:8080/swagger-ui/index.html</p>
 <p></p>
 <h2><strong>Tecnologias Utilizadas</strong></h2>
 
@@ -209,7 +211,7 @@
 <p>Também temos as configurações de Plugin para o Build:</p>
  <p></p>
 	
-                <build>
+       <build>
 		<plugins>
 			<plugin>
                 		<groupId>org.springframework.boot</groupId>
